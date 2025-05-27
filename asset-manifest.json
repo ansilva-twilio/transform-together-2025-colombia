@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/transform-together-2025-colombia/static/css/main.e6c13ad2.css",
+    "main.js": "/transform-together-2025-colombia/static/js/main.e747ac08.js",
+    "static/js/453.80e079db.chunk.js": "/transform-together-2025-colombia/static/js/453.80e079db.chunk.js",
+    "index.html": "/transform-together-2025-colombia/index.html",
+    "main.e6c13ad2.css.map": "/transform-together-2025-colombia/static/css/main.e6c13ad2.css.map",
+    "main.e747ac08.js.map": "/transform-together-2025-colombia/static/js/main.e747ac08.js.map",
+    "453.80e079db.chunk.js.map": "/transform-together-2025-colombia/static/js/453.80e079db.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.e747ac08.js"
+  ]
+}
