@@ -1,24 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import { Box, Stack } from '@twilio-paste/core';
+import {Theme} from '@twilio-paste/core/theme';
+import { LogoTwilioIcon } from '@twilio-paste/icons/esm/LogoTwilioIcon';
+import PasswordScreen from './components/PasswordScreen';
+import OrderList from './components/OrderList';
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Theme.Provider theme="default">
+      {!isAuthenticated ? (
+        <PasswordScreen onAuthenticated={() => setIsAuthenticated(true)} />
+      ) : (
+        <Box backgroundColor="colorBackgroundBody" minHeight="100vh">
+          <Box
+            backgroundColor="colorBackground"
+            padding="space60"
+            borderBottomWidth="borderWidth10"
+            borderBottomStyle="solid"
+            borderBottomColor="colorBorderWeaker"
+          >
+            <Stack orientation="horizontal" spacing="space40" align="center">
+              <LogoTwilioIcon
+                color="colorTextIcon"
+                decorative
+                size="sizeIcon60"
+              />
+              <h1>
+                Transform Together 2025 🇨🇴 Colombia
+              </h1>
+            </Stack>
+          </Box>
+          <OrderList />
+        </Box>
+      )}
+    </Theme.Provider>
   );
 }
 
