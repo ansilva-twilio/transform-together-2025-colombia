@@ -1,5 +1,6 @@
 {
   "name": "tt-jun25-web",
+  "homepage": "https://ansilva-twilio.github.io/transform-together-2025-colombia",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -11,6 +12,7 @@
     "@twilio-paste/icons": "^13.0.1",
     "airtable": "^0.12.2",
     "axios": "^1.9.0",
+    "gh-pages": "^6.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
@@ -19,6 +21,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
