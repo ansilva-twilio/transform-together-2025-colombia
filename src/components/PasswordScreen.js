@@ -22,8 +22,8 @@ const PasswordScreen = ({ onAuthenticated }) => {
     setIsLoading(true);
     setError('');
 
-    // Simple frontend check - in a real app, this would be handled by a backend
-    if (password === 'transform2025') {
+    // Simple frontend check
+    if (password === process.env.REACT_APP_PASSWORD) {
       onAuthenticated();
     } else {
       setError('Contraseña incorrecta');
