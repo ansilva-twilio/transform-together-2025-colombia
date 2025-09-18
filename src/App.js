@@ -28,7 +28,7 @@ function App() {
                 size="sizeIcon60"
               />
               <h1>
-                Transform Together 2025 🇨🇴 Colombia
+                Transform Together 2025 🇲🇽 Mexico
               </h1>
             </Stack>
           </Box>
