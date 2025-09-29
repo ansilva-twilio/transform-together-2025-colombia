@@ -1,15 +1,17 @@
 import Airtable from 'airtable';
+import { getInfo } from "../services/transformService.js";
 
+const info = await getInfo();
 // Initialize Airtable
 const base = new Airtable({
-  apiKey: process.env.REACT_APP_AIRTABLE_API_KEY
-}).base(process.env.REACT_APP_AIRTABLE_BASE_ID);
+  apiKey: info.AIRTABLE_API_KEY
+}).base(info.AIRTABLE_BASE_ID);
 
 export const ORDERS_TABLE = 'Orders';
 
 export const AIRTABLE_CONFIG = {
-  BASE_ID: process.env.REACT_APP_AIRTABLE_BASE_ID,
-  API_KEY: process.env.REACT_APP_AIRTABLE_API_KEY,
+  BASE_ID: info.AIRTABLE_BASE_ID,
+  API_KEY: info.AIRTABLE_API_KEY,
   TABLE_NAME: 'Orders',
   FIELDS: {
     ORDER_NUMBER: 'order_number',

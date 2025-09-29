@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Box,
   Button,
@@ -11,11 +11,20 @@ import {
   Label
 } from '@twilio-paste/core';
 import { LogoTwilioIcon } from '@twilio-paste/icons/esm/LogoTwilioIcon';
+import { getInfo } from '../services/transformService';
 
 const PasswordScreen = ({ onAuthenticated }) => {
   const [password, setPassword] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+  const [info, setInfo] = useState([]);
+
+  useEffect(() => {
+    getInfo()
+      .then(data => setInfo(data || []))
+      .catch(err => console.error("Error:", err));
+  }, []);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,7 +32,7 @@ const PasswordScreen = ({ onAuthenticated }) => {
     setError('');
 
     // Simple frontend check
-    if (password === process.env.REACT_APP_PASSWORD) {
+    if (password === info.PASSWORD) {
       onAuthenticated();
     } else {
       setError('Contraseña incorrecta');
